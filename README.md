@@ -1,8 +1,6 @@
 [logo]: https://www.udacity.com/favicon.ico "Logo Title Text 2"
 # ![udacity][logo] Neighborhood Map
 
-------------------------------------
-
 This site shows a list of five historic landmarks in Washington DC with markers for each on a Google map.
 
 ## Installation
@@ -14,7 +12,7 @@ This site shows a list of five historic landmarks in Washington DC with markers 
 
 ## Usage
 * To show only a specific location on the map, search in the input box in the left panel (or top panel if on a mobile device)
-* To open an infoWindow for a location, click the location's button or its' marker.
+* To open an info window for a location, click the location's button or its' marker.
 * To reset the visible markers and recenter the map, click the button next to the Search input box.
 
 ## APIs Used
