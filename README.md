@@ -1,4 +1,4 @@
-[logo]: https://d125fmws0bore1.cloudfront.net/assets/udacity_apple_icon-b2fe0e8bc834963f1cf490fdc55bc3170b37f05374e1e4b383af1d755d1893db.png "Udacity"
+[logo]: https://www.udacity.com/favicon.ico "Udacity"
 ![udacity][logo] Project 6: Neighborhood Map Proect
 ====================================
 
