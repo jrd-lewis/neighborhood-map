@@ -4,17 +4,22 @@ body {
 
 html,
 body,
-.container-fluid,
-.row,
-.col-md-7,
-.col-lg-8,
-#googleMap {
+.container,
+.row {
   height: 96%;
 }
 
 #googleMap {
+  height: 100%;
   border-radius: 10px;
   box-shadow: -7px 7px 5px #aaaaaa;
+}
+
+.col-12 {
+  height: 96%;
+  > #googleMap {
+    max-height: 700px;
+  }
 }
 
 .img-sm {
