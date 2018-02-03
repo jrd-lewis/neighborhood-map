@@ -2,56 +2,52 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name = "author" content="Jared Lewis">
-    <title>Neighborhood Map Project</title>
-    <link rel="stylesheet" href="lib/Bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="lib/Bootstrap/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/app.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Jared Lewis">
+    <title>Neighborhood Map</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
+    <link rel="stylesheet" href="css/app.bs4.css">
   </head>
   <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">Neighborhood Map <small>by Jared Lewis</small></a>
-      </div>
-    </nav>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-offset-1 col-lg-2 col-md-4 col-sm-5">
-          <div class="panel panel-primary">
-            <div class="panel-heading text-center"><h3 class="panel-title">Locations</h3></div>
-            <div class="panel-body alert-info">
-              <div class="input-group">
-                <input type="search" placeholder="Search..." class="form-control" data-bind="textInput: locQuery" autocomplete="off">
-                <span class="input-group-btn">
-                  <button class="btn btn-default" type="button" data-bind="click: mapModel.resetMap, attr: { title: 'Reset' }"><i class="fa fa-refresh" aria-hidden="true"></i></button>
-                </span>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Neighborhood Map</a>
+      </nav>
+    </header>
+    <main class="container-fluid" role="main">
+      <article class="row">
+          <aside class="col-md-5 col-lg-4">
+            <div class="card bg-primary mb-4">
+              <div class="card-header text-white">Locations</div>
+              <div class="card-body alert-primary">
+                <div class="input-group input-group-sm">
+                  <input class="form-control" type="text" placeholder="Search..." aria-label="Search" data-bind="textInput: locQuery" autocomplete="off">
+                  <div class="input-group-append">
+                    <button class="btn btn-primary" type="button" data-bind="click: mapModel.resetMap, attr: { title: 'Reset' }"><span class="fa fa-sync" aria-hidden="true"></span></button>
+                  </div>
+                </div>
+                <hr>
+                <div data-bind="foreach: filteredLocations">
+                  <button type="button" class="btn btn-light btn-block" data-bind="text: name, click: $parent.focusLoc"></button>
+                </div>
               </div>
+            </div>
+          </aside>
+          <section class="col-md-7 col-lg-8">
+            <article class="alert alert-danger" id="error" role="alert">
+              <h1 class="h4 alert-heading">Error While Loading Page</h1>
               <hr>
-              <div data-bind="foreach: filteredLocations">
-                <button type="button" class="btn btn-default btn-block" data-bind="text: name, click: $parent.focusLoc"></button>
-              </div>
-            </div> <!-- panel-body alert-info -->
-          </div> <!-- panel panel-primary -->
-        </div> <!-- col-lg-offset-1 col-lg-2 col-md-4 col-sm-5 -->
-        <div class="col-md-8 col-sm-7">
-          <div id="error">
-            <div class="panel panel-error">
-              <div class="panel-heading text-center"><h3 class="panel-title">Error While Loading Page</h3></div>
-              <div class="panel-body alert-danger text-center">
-                Google Map could not be loaded. Please try again.
-              </div> <!-- panel-body alert-danger -->
-            </div> <!-- panel panel-error -->
-          </div>
-          <div id="googleMap"></div>
-        </div> <!-- col-md-8 col-sm-7 -->
-      </div> <!-- row -->
-    </div> <!-- container-fluid -->
-    <script src="lib/jQuery/jquery-2.2.4.min.js"></script>
-    <script async src="lib/Bootstrap/bootstrap.min.js"></script>
-    <script src="lib/Knockout/knockout-3.4.0.js"></script>
+              <p>Google Maps could not be loaded. Please try again.</p>
+            </article>
+            <figure class="rounded" id="googleMap"></figure>
+          </section>
+      </article>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script async src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
     <script src="js/app.min.js"></script>
-    <script async src="http://maps.googleapis.com/maps/api/js?callback=initPage" onerror="googleError()"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNsNPzQiM9nWGuLjXYTHaWmNAR5_Iv3I0&callback=initPage" onerror="googleError()"></script>
   </body>
 </html>

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,IAAK,CACH,WAAW,CAAE,MAAM,CAGrB,8DAMW,CACT,MAAM,CAAE,GAAG,CAGb,UAAW,CACT,aAAa,CAAE,IAAI,CACnB,UAAU,CAAE,oBAAoB,CAGlC,OAAQ,CACN,MAAM,CAAE,KAAK,CACb,KAAK,CAAE,IAAI",
+"sources": ["../sass/app.bs4.scss"],
+"names": [],
+"file": "app.bs4.css"
+}
