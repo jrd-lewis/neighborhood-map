@@ -43,7 +43,7 @@ var Flickr = function() {
       '&format=json&jsoncallback=?';
     self.apiTimeout = setTimeout(function() {
       var title = "Couldn't Load Data";
-      var src = 'http://placehold.it/150x150?text=Error!';
+      var src = 'https://placehold.it/150x150?text=Error!';
       mapModel.openWindow.setContent('<h5 class="panel-title">' + title +
         '</h5>' + '<hr><div class="text-center"><img alt="Error" src="' + src +
         '" class="img-thumbnail img-sm"></div>');
@@ -53,7 +53,7 @@ var Flickr = function() {
       dataType: 'json'
     }).fail(function() {
       var title = "Couldn't Load Data";
-      var src = 'http://placehold.it/150x150?text=Error!';
+      var src = 'https://placehold.it/150x150?text=Error!';
       mapModel.openWindow.setContent('<h5 class="panel-title">' + title +
         '</h5>' + '<hr><div class="text-center"><img alt="Error" src="' + src +
         '" class="img-thumbnail img-sm"></div>');
@@ -64,7 +64,7 @@ var Flickr = function() {
         src = 'No image available';
       }
       else {
-        src = 'http://farm' + pic.farm + '.static.flickr.com/' + pic.server +
+        src = 'https://farm' + pic.farm + '.static.flickr.com/' + pic.server +
           '/' + pic.id + '_' + pic.secret + '_m.jpg';
       }
       mapModel.openWindow.setContent('<h5 class="panel-title">' + marker.name +
